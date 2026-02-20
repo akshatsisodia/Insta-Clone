@@ -14,11 +14,12 @@ main {
     gap: 2rem;
     background-color: #f0f0f0;
     padding-block: 2rem;
-    padding-inline: 4rem;
+    padding-inline: 2.5rem;
     border-radius: 1rem;
 
-    h1,p{
-        color: rgb(37, 37, 37);
+    h1,
+    p {
+      color: rgb(37, 37, 37);
     }
 
     form {
@@ -37,8 +38,17 @@ main {
         border: none;
       }
 
-      input{
+      input {
         background-color: #d6d6d6;
+      }
+
+      input:-webkit-autofill,
+      input:-webkit-autofill:hover,
+      input:-webkit-autofill:focus,
+      input:-webkit-autofill:active {
+        -webkit-box-shadow: 0 0 0 1000px #d6d6d6 inset !important;
+        -webkit-text-fill-color: black !important;
+        transition: background-color 5000s ease-in-out 0s;
       }
 
       button {
@@ -48,10 +58,10 @@ main {
       }
     }
 
-    .toggleAuthForm{
-        text-decoration: none;
-        color: rgb(243, 35, 42);
-        cursor: pointer;
+    .toggleAuthForm {
+      text-decoration: none;
+      color: rgb(243, 35, 42);
+      cursor: pointer;
     }
   }
 }

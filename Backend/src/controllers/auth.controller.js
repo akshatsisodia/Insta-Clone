@@ -30,7 +30,8 @@ async function userRegisterController(req, res){
 
 
     const token = jwt.sign({
-        id:user._id
+        id:user._id,
+        username:user.username
     },process.env.JWT_SECRET,{expiresIn:"1h"})
 
     res.cookie("token",token);
@@ -91,7 +92,26 @@ async function userLoginController(req, res){
     })
 }
 
+async function getMeController(req, res){
+    const userId = req.user.id;
+
+    const user = await userModel.findById(userId);
+
+    console.log(user);
+    
+
+    res.status(200).json({
+        user:{
+            username:user.username,
+            email:user.email,
+            bio:user.bio,
+            profile_pic:user.profile_pic
+        }
+    })
+}
+
 module.exports = {
     userRegisterController,
-    userLoginController
+    userLoginController,
+    getMeController
 }
