@@ -29,8 +29,7 @@ main {
       flex-direction: column;
       gap: 1.4rem;
 
-      input,
-      button {
+      input {
         padding-inline: 1.5rem;
         padding-block: 1rem;
         border-radius: 1rem;
@@ -51,11 +50,7 @@ main {
         transition: background-color 5000s ease-in-out 0s;
       }
 
-      button {
-        background-color: rgb(243, 35, 42);
-        color: whitesmoke;
-        cursor: pointer;
-      }
+     
     }
 
     .toggleAuthForm {
