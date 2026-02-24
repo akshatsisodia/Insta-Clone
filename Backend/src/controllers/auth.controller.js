@@ -60,7 +60,7 @@ async function userLoginController(req, res){
                 email
             }
         ]
-    })
+    }).select("+password");
 
     if(!user){
         return res.status(404).json({
