@@ -50,7 +50,7 @@ const Register = () => {
           type="password" 
           name="password" 
           placeholder="Enter your password" />
-          <button className="button primary-btn">Submit</button>
+          <button disabled={loading} className="button primary-btn">{loading?"Registering User...":"Register"}</button>
         </form>
         <p>Already have an account ? <Link className="toggleAuthForm" to="/login">Login</Link></p>
       </div>

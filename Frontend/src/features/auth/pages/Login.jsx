@@ -22,6 +22,7 @@ const Login = () => {
   }
 
   if(loading){
+
     return <main>
       <h2>Loading....</h2>
     </main>
@@ -36,7 +37,7 @@ const Login = () => {
         }}>
           <input onInput={(e)=>{setUsername(e.target.value)}} type="text" name="username" placeholder="Enter your username" />
           <input onInput={(e)=>{setPassword(e.target.value)}} type="password" name="password" placeholder="Enter your password" />
-          <button className="button primary-btn">Submit</button>
+          <button disabled={loading} className="button primary-btn">{loading?"Logging in...":"Login"}</button>
         </form>
         <p>Don't have an account? <Link className="toggleAuthForm" to="/register">Register</Link></p>
       </div>
