@@ -1,11 +1,15 @@
 .feed-page{
     display: flex;
-    align-items: flex-start;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    padding-top: 0.5rem;
 
     .feed{
         max-width: 400px;
         width: 100%;
+        display: flex;
+        flex-direction: column;
 
         .posts{
             width: 100%;

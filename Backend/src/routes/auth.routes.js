@@ -2,7 +2,7 @@ const express = require("express");
 const authRouter = express.Router();
 const authController = require("../controllers/auth.controller");
 const identifyUser = require("../middleware/auth.middleware");
-const limitApiRequest = require("../middleware/rateLimiter");
+const limitApiRequest = require("../middleware/rateLimiter.middleware");
 
 authRouter.post("/register",limitApiRequest , authController.userRegisterController)
 

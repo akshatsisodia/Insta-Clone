@@ -16,8 +16,11 @@ export function usePost(){
         setLoading(false);
     }
 
-    async function handleCreatePost(){
-        
+    async function handleCreatePost(postImage,caption){
+        setLoading(true);
+        const data = await createPost(postImage,caption);
+        setFeed([data.post,...feed]);
+        setLoading(false);
     }
 
     useEffect(()=>{
@@ -26,6 +29,7 @@ export function usePost(){
 
     return {
         handleFeed,
+        handleCreatePost,
         loading,
         feed,
         post

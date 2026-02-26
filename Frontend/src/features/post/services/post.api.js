@@ -15,11 +15,13 @@ export const getFeed =  async  () => {
 }
 
 
-export const createPost = async ()=>{
-    try{
-        const response = await api.post("/api/post/");
-        return response.data;
-    }catch(err){
-        throw err;
-    }
+export const createPost = async (postImage,caption)=>{
+    const formData = new FormData;
+
+    formData.append("postImage",postImage);
+    formData.append("caption",caption)
+
+    const response = await api.post("/api/post",formData);
+    
+    return response.data;
 }

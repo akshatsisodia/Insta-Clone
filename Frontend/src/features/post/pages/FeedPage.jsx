@@ -11,8 +11,6 @@ const FeedPage = () => {
   useEffect(()=>{
     handleFeed();
   },[])
-  console.log(feed);
-  
 
   if(loading || !feed){
     return (<main><h1>Loading..... Feed</h1></main>)

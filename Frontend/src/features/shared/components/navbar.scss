@@ -1,0 +1,15 @@
+.nav-bar{
+    min-width: 400px;
+    padding-inline: 1rem;
+    padding-block: 0.75rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: rgb(48, 48, 48);
+    border-radius: 0.75rem;
+
+    h4{
+        font-weight: 300;
+        font-size: 1.2rem;
+    }
+}
