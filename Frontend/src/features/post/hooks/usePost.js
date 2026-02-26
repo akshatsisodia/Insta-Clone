@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { PostContext } from "../PostContext";
-import { getFeed } from "../services/post.api";
+import { getFeed, createPost } from "../services/post.api";
+import { useEffect } from "react";
 
 export function usePost(){
 
@@ -14,6 +15,14 @@ export function usePost(){
         setFeed(response.posts);
         setLoading(false);
     }
+
+    async function handleCreatePost(){
+        
+    }
+
+    useEffect(()=>{
+        handleFeed();
+    },[])
 
     return {
         handleFeed,

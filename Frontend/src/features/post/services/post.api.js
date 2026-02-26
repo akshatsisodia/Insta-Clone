@@ -5,9 +5,19 @@ const api = axios.create({
     withCredentials:true
 })
 
-export async function getFeed(){
+export const getFeed =  async  () => {
     try{
         const response = await api.get("/api/post/feed");
+        return response.data;
+    }catch(err){
+        throw err;
+    }
+}
+
+
+export const createPost = async ()=>{
+    try{
+        const response = await api.post("/api/post/");
         return response.data;
     }catch(err){
         throw err;
