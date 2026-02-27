@@ -91,7 +91,7 @@ async function likePostController(req, res) {
     });
   }
 
-  const like = await likeModel.create({
+  await likeModel.create({
     postId: postId,
     user: username,
   });
@@ -99,6 +99,32 @@ async function likePostController(req, res) {
   res.status(201).json({
     message: "post liked Successfully",
   });
+}
+
+async function unLikePostController(req,res){
+  const postId = req.params.postId;
+  const username = req.user.username;
+
+    console.log(postId, username);
+
+  const isLiked = await likeModel.findOne({
+    postId:postId,
+    user:username
+  })
+  
+
+  if(!isLiked){
+    return res.status(400).json({
+      message:"Post didn't like."
+    })
+  }
+
+  await likeModel.findOneAndDelete({_id:isLiked._id});
+
+  res.status(200).json({
+    message:"Post Unlike Successfully."
+  })
+
 }
 
 async function getFeedController(req, res){
@@ -129,5 +155,6 @@ module.exports = {
   gettingUserPostsController,
   getPostDetailsController,
   likePostController,
+  unLikePostController,
   getFeedController
 };
